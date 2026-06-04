@@ -135,7 +135,7 @@
       "orchestrator": {
         "model": "deepseek/deepseek-v4-pro",
         "skills": ["*"],
-        "mcps": ["*", "!context7"]
+        "mcps": ["*"]
       },
       "oracle": {
         "model": "deepseek/deepseek-v4-pro",
@@ -151,13 +151,13 @@
       },
       "librarian": {
         "model": "deepseek/deepseek-v4-flash",
-        "skills": ["*"],
-        "mcps": ["*"]
+        "skills": ["codemap", "mmx-cli"],
+        "mcps": ["websearch", "context7", "grep_app", "gh-mcp"]
       },
       "explorer": {
         "model": "deepseek/deepseek-v4-flash",
-        "skills": ["*"],
-        "mcps": ["*"]
+        "skills": ["codemap", "mmx-cli"],
+        "mcps": ["grep_app", "gh-mcp"]
       },
       "designer": {
         "model": "deepseek/deepseek-v4-pro",
@@ -173,8 +173,8 @@
       },
       "observer": {
         "model": "deepseek/deepseek-v4-flash",
-        "skills": ["*"],
-        "mcps": ["*"]
+        "skills": ["mmx-cli"],
+        "mcps": []
       }
     }
   },
