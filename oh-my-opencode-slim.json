@@ -178,5 +178,9 @@
       }
     }
   },
-  "disabled_agents": []
+  "disabled_agents": [],
+  "multiplexer": {
+    "type": "auto",
+    "layout": "main-vertical"
+  }
 }
