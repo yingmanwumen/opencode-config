@@ -178,6 +178,14 @@
       }
     }
   },
+  "council": {
+    "presets": {
+      "default": {
+        "alpha": { "model": "deepseek/deepseek-v4-pro" },
+        "beta": { "model": "deepseek/deepseek-v4-flash" }
+      }
+    }
+  },
   "disabled_agents": [],
   "multiplexer": {
     "type": "auto",
