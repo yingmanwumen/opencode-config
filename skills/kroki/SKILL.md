@@ -247,12 +247,12 @@ C4
 
 ```bash
 cat <<'ERD' | curl -s https://kroki.io/erd/svg -H 'Content-Type: text/plain' --data-binary @- > erd.svg
-[User] {bgcolor: "#d0e0ff"}
+[User]
 *id
 name
-email {unique}
+email
 
-[Order] {bgcolor: "#ffe0d0"}
+[Order]
 *id
 user_id
 total
