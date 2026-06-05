@@ -17,7 +17,7 @@
   "showSessionTitle": true,
   "showIcon": true,
   "customIconPath": null,
-  "suppressWhenFocused": true,
+  "suppressWhenFocused": false,
   "enableOnDesktop": true,
   "notificationSystem": "osascript",
   "linux": {
