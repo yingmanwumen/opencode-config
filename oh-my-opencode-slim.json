@@ -176,15 +176,56 @@
         "skills": ["mmx-cli"],
         "mcps": []
       }
+    },
+    "openrouter-preset": {
+      "orchestrator": {
+        "model": "openrouter/deepseek/deepseek-v4-pro",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "oracle": {
+        "model": "openrouter/deepseek/deepseek-v4-pro",
+        "variant": "max",
+        "skills": ["simplify"],
+        "mcps": []
+      },
+      "council": {
+        "model": "openrouter/deepseek/deepseek-v4-pro",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "openrouter/deepseek/deepseek-v4-flash",
+        "skills": ["codemap", "mmx-cli"],
+        "mcps": ["websearch", "context7", "grep_app", "gh-mcp"]
+      },
+      "explorer": {
+        "model": "openrouter/deepseek/deepseek-v4-flash",
+        "skills": ["codemap", "mmx-cli"],
+        "mcps": ["grep_app", "gh-mcp"]
+      },
+      "designer": {
+        "model": "openrouter/deepseek/deepseek-v4-pro",
+        "variant": "medium",
+        "skills": ["agent-browser"],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "openrouter/deepseek/deepseek-v4-flash",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "observer": {
+        "model": "openrouter/deepseek/deepseek-v4-flash",
+        "skills": ["mmx-cli"],
+        "mcps": []
+      }
     }
   },
   "council": {
-    "presets": {
-      "default": {
-        "alpha": { "model": "deepseek/deepseek-v4-pro" },
-        "beta": { "model": "deepseek/deepseek-v4-flash" }
-      }
-    }
+    "presets": {}
   },
   "disabled_agents": [],
   "multiplexer": {
