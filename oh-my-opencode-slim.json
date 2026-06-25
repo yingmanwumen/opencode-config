@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "deepseek-preset",
+  "preset": "my-preset",
   "presets": {
     "openai": {
       "orchestrator": {
@@ -41,7 +41,7 @@
     },
     "opencode-go": {
       "orchestrator": {
-        "model": "opencode-go/glm-5.1",
+        "model": "opencode-go/glm-5.2",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
@@ -74,7 +74,7 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode/deepseek-v4-flash-free",
         "variant": "high",
         "skills": [],
         "mcps": []
@@ -87,46 +87,46 @@
     },
     "my-preset": {
       "orchestrator": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "opencode-go/glm-5.2",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "deepseek/deepseek-v4-pro",
         "variant": "max",
         "skills": ["simplify"],
         "mcps": []
       },
       "council": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "deepseek/deepseek-v4-pro",
         "variant": "high",
         "skills": [],
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode/deepseek-v4-flash-free",
         "skills": ["*"],
         "mcps": ["*"]
       },
       "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode/deepseek-v4-flash-free",
         "skills": ["*"],
         "mcps": ["*"]
       },
       "designer": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "opencode-go/kimi-k2.6",
         "variant": "medium",
         "skills": ["agent-browser"],
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode/deepseek-v4-flash-free",
         "variant": "high",
         "skills": [],
         "mcps": []
       },
       "observer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/kimi-k2.6",
         "skills": ["*"],
         "mcps": ["*"]
       }
