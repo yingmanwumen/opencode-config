@@ -1,6 +1,6 @@
 {
   "command": {
-    "enabled": true,
+    "enabled": false,
     "path": "/bin/bash",
     "args": [
       "-c",

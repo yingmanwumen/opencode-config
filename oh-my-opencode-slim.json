@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "my-preset",
+  "preset": "minimax-preset",
   "presets": {
     "openai": {
       "orchestrator": {
@@ -104,14 +104,16 @@
         "mcps": []
       },
       "librarian": {
-        "model": "opencode/deepseek-v4-flash-free",
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
         "skills": ["*"],
-        "mcps": ["*"]
+        "mcps": ["*"],
+        "variant": "thinking"
       },
       "explorer": {
-        "model": "opencode/deepseek-v4-flash-free",
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
         "skills": ["*"],
-        "mcps": ["*"]
+        "mcps": ["*"],
+        "variant": "thinking"
       },
       "designer": {
         "model": "opencode-go/kimi-k2.6",
@@ -120,8 +122,8 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode/deepseek-v4-flash-free",
-        "variant": "high",
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
         "skills": [],
         "mcps": []
       },
@@ -221,6 +223,49 @@
         "model": "openrouter/deepseek/deepseek-v4-flash",
         "skills": ["mmx-cli"],
         "mcps": []
+      }
+    },
+    "minimax-preset": {
+      "orchestrator": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "skills": ["*"],
+        "mcps": ["*", "!context7"],
+        "variant": "thinking"
+      },
+      "oracle": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "skills": ["simplify"],
+        "mcps": [],
+        "variant": "thinking"
+      },
+      "librarian": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "skills": ["*"],
+        "mcps": ["*"],
+        "variant": "thinking"
+      },
+      "explorer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "designer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["agent-browser"],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": [],
+        "mcps": []
+      },
+      "observer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
       }
     }
   },
