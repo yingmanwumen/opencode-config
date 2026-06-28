@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "minimax-preset",
+  "preset": "free-preset",
   "presets": {
     "openai": {
       "orchestrator": {
@@ -88,19 +88,14 @@
     "my-preset": {
       "orchestrator": {
         "model": "opencode-go/glm-5.2",
+        "variant": "high",
         "skills": ["*"],
         "mcps": ["*", "!context7"]
       },
       "oracle": {
-        "model": "deepseek/deepseek-v4-pro",
+        "model": "opencode-go/glm-5.2",
         "variant": "max",
         "skills": ["simplify"],
-        "mcps": []
-      },
-      "council": {
-        "model": "deepseek/deepseek-v4-pro",
-        "variant": "high",
-        "skills": [],
         "mcps": []
       },
       "librarian": {
@@ -179,52 +174,6 @@
         "mcps": []
       }
     },
-    "openrouter-preset": {
-      "orchestrator": {
-        "model": "openrouter/deepseek/deepseek-v4-pro",
-        "skills": ["*"],
-        "mcps": ["*"]
-      },
-      "oracle": {
-        "model": "openrouter/deepseek/deepseek-v4-pro",
-        "variant": "max",
-        "skills": ["simplify"],
-        "mcps": []
-      },
-      "council": {
-        "model": "openrouter/deepseek/deepseek-v4-pro",
-        "variant": "high",
-        "skills": [],
-        "mcps": []
-      },
-      "librarian": {
-        "model": "openrouter/deepseek/deepseek-v4-flash",
-        "skills": ["codemap", "mmx-cli"],
-        "mcps": ["websearch", "context7", "grep_app", "gh-mcp"]
-      },
-      "explorer": {
-        "model": "openrouter/deepseek/deepseek-v4-flash",
-        "skills": ["codemap", "mmx-cli"],
-        "mcps": ["grep_app", "gh-mcp"]
-      },
-      "designer": {
-        "model": "openrouter/deepseek/deepseek-v4-pro",
-        "variant": "medium",
-        "skills": ["agent-browser"],
-        "mcps": []
-      },
-      "fixer": {
-        "model": "openrouter/deepseek/deepseek-v4-flash",
-        "variant": "high",
-        "skills": [],
-        "mcps": []
-      },
-      "observer": {
-        "model": "openrouter/deepseek/deepseek-v4-flash",
-        "skills": ["mmx-cli"],
-        "mcps": []
-      }
-    },
     "minimax-preset": {
       "orchestrator": {
         "model": "minimax-cn-coding-plan/MiniMax-M3",
@@ -264,6 +213,50 @@
       "observer": {
         "model": "minimax-cn-coding-plan/MiniMax-M3",
         "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
+      }
+    },
+    "free-preset": {
+      "orchestrator": {
+        "model": "opencode/mimo-v2.5-free",
+        "variant": "high",
+        "skills": ["*"],
+        "mcps": ["*", "!context7"]
+      },
+      "oracle": {
+        "model": "deepseek/deepseek-v4-pro",
+        "variant": "max",
+        "skills": ["simplify"],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "explorer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "designer": {
+        "model": "opencode/mimo-v2.5-free",
+        "variant": "high",
+        "skills": ["agent-browser"],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "deepseek/deepseek-v4-flash",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "observer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "high",
         "skills": ["*"],
         "mcps": ["*"]
       }
