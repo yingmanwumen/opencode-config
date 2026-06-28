@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "free-preset",
+  "preset": "balanced-preset",
   "presets": {
     "openai": {
       "orchestrator": {
@@ -213,6 +213,44 @@
       "observer": {
         "model": "minimax-cn-coding-plan/MiniMax-M3",
         "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
+      }
+    },
+    "balanced-preset": {
+      "orchestrator": {
+        "model": "deepseek/deepseek-v4-pro",
+        "variant": "high",
+        "skills": ["*"],
+        "mcps": ["*", "!context7"]
+      },
+      "oracle": {
+        "model": "opencode-go/glm-5.2",
+        "variant": "max",
+        "skills": ["simplify"],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "explorer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "fixer": {
+        "model": "deepseek/deepseek-v4-flash",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "observer": {
+        "model": "opencode/mimo-v2.5-free",
+        "variant": "high",
         "skills": ["*"],
         "mcps": ["*"]
       }
