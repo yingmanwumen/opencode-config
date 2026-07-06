@@ -3,3 +3,4 @@ package-lock.json
 bun.lock
 *.bak
 opencode-notifier-state.json
+.oh-my-opencode-slim/
