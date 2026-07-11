@@ -2,7 +2,7 @@
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
   "preset": "openai",
   "presets": {
-    "openai": {
+    "openai-expensive": {
       "orchestrator": {
         "model": "openai/gpt-5.6-terra",
         "variant": "medium",
@@ -12,8 +12,8 @@
       "council": {
         "model": "openai/gpt-5.6-terra",
         "variant": "high",
-        "skills": ["*"],
-        "mcps": ["*"]
+        "skills": [],
+        "mcps": []
       },
       "oracle": {
         "model": "openai/gpt-5.6-sol",
@@ -43,7 +43,95 @@
         "model": "openai/gpt-5.6-luna",
         "variant": "medium",
         "skills": ["*"],
+        "mcps": []
+      }
+    },
+    "openai": {
+      "orchestrator": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "high",
+        "skills": ["*"],
         "mcps": ["*"]
+      },
+      "council": {
+        "model": "openai/gpt-5.6-terra",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "oracle": {
+        "model": "openai/gpt-5.6-terra",
+        "variant": "high",
+        "skills": ["*"],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "explorer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "designer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "medium",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "fixer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "medium",
+        "skills": ["*"],
+        "mcps": []
+      }
+    },
+    "openai-poor": {
+      "orchestrator": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "high",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "council": {
+        "model": "openai/gpt-5.6-terra",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "oracle": {
+        "model": "openai/gpt-5.6-terra",
+        "variant": "high",
+        "skills": ["*"],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "explorer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "designer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "medium",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "fixer": {
+        "model": "deepseek/deepseek-v4-flash",
+        "variant": "high",
+        "skills": ["*"],
+        "mcps": []
       }
     },
     "balanced-preset": {
@@ -90,7 +178,7 @@
         },
         "minimax": {
           "model": "minimax-cn-coding-plan/MiniMax-M3",
-          "variant": "max"
+          "variant": "thinking"
         },
         "terra": {
           "model": "openai/gpt-5.6-terra",
