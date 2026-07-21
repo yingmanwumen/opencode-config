@@ -1,12 +1,11 @@
 ---
 name: kroki
-description: >
+description: |
   Convert plain text diagrams to images via the free Kroki API (https://kroki.io).
-  Supports PlantUML, Mermaid, GraphViz, D2, C4, BPMN, Excalidraw, Vega, Vega-Lite,
-  WaveDrom, ERD, Nomnoml, Structurizr, BlockDiag, Ditaa, UMLet, TikZ, and more.
+  Supports Mermaid, GraphViz, and more.
   Use when the user needs to generate flowcharts, sequence diagrams, class diagrams,
   ER diagrams, network diagrams, architecture diagrams, or any diagram from a textual
-  description. Also use when you have PlantUML/Mermaid/GraphViz/etc source and need
+  description. Also use when you have Mermaid/GraphViz/etc source and need
   a rendered image (PNG/SVG/PDF).
 ---
 

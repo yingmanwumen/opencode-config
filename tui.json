@@ -1,5 +1,7 @@
 {
-  "plugin": [],
+  "plugin": [
+    "@cortexkit/opencode-magic-context@latest"
+  ],
   "attention": {
     "enabled": false
   }
