@@ -1,7 +1,5 @@
 {
-  "plugin": [
-    "oh-my-opencode-slim"
-  ],
+  "plugin": [],
   "attention": {
     "enabled": false
   }

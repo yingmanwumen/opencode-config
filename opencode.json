@@ -4,50 +4,33 @@
   "mcp": {
     "context7": {
       "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@upstash/context7-mcp"
-      ],
+      "command": ["npx", "-y", "@upstash/context7-mcp"],
       "enabled": true
     },
     "gh-mcp": {
       "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-github"
-      ],
+      "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
       "enabled": true
     },
     "notion": {
       "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@notionhq/notion-mcp-server"
-      ],
+      "command": ["npx", "-y", "@notionhq/notion-mcp-server"],
       "environment": {
         "NOTION_TOKEN": "{env:NOTION_TOKEN}"
       },
       "enabled": false
     }
   },
-  "plugin": [
-    "opencode-pty",
-    "@mohak34/opencode-notifier@latest",
-    "./opencode-codex-identity-plugin.ts",
-    "oh-my-opencode-slim"
-  ],
+  "plugin": ["@mohak34/opencode-notifier@latest"],
   "shell": "/bin/zsh",
   "lsp": false,
   "permission": "allow",
   "agent": {
     "explore": {
-      "disable": true
+      "disable": false
     },
     "general": {
-      "disable": true
+      "disable": false
     }
   }
 }
