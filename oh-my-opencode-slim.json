@@ -111,6 +111,9 @@
       }
     }
   },
+  "multiplexer": {
+    "type": "auto"
+  },
   "companion": {
     "enabled": false
   }
