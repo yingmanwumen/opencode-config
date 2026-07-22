@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-22T10:08:55.482Z",
+  "updatedAt": "2026-07-22T10:17:04.851Z",
   "skills": {
     "simplify": {
       "status": "deleted",
@@ -56,7 +56,7 @@
       "sourceHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
       "lastManagedHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
       "lastSeenHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
-      "updatedAt": "2026-07-22T10:08:55.482Z"
+      "updatedAt": "2026-07-22T10:17:04.851Z"
     },
     "worktrees": {
       "status": "deleted",
