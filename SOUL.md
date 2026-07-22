@@ -1,1 +1,1 @@
-# 人格设定
+# Personality Settings

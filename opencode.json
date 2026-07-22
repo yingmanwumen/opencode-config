@@ -1,21 +1,35 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "snapshot": false,
-  "instructions": ["~/.config/opencode/SOUL.md"],
+  "instructions": [
+    "~/.config/opencode/SOUL.md"
+  ],
   "mcp": {
     "context7": {
       "type": "local",
-      "command": ["npx", "-y", "@upstash/context7-mcp"],
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp"
+      ],
       "enabled": true
     },
     "gh-mcp": {
       "type": "local",
-      "command": ["npx", "-y", "@modelcontextprotocol/server-github"],
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
       "enabled": true
     },
     "notion": {
       "type": "local",
-      "command": ["npx", "-y", "@notionhq/notion-mcp-server"],
+      "command": [
+        "npx",
+        "-y",
+        "@notionhq/notion-mcp-server"
+      ],
       "environment": {
         "NOTION_TOKEN": "{env:NOTION_TOKEN}"
       },
