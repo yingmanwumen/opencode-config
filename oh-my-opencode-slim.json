@@ -1,0 +1,123 @@
+{
+  "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
+  "preset": "openai",
+  "presets": {
+    "openai-expensive": {
+      "orchestrator": {
+        "model": "openai/gpt-5.6-terra",
+        "variant": "medium",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "oracle": {
+        "model": "openai/gpt-5.6-sol",
+        "variant": "high",
+        "skills": ["anti-sycophancy", "grilling"],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "skills": ["agent-browser", "mmx-cli"],
+        "mcps": ["*"]
+      },
+      "explorer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "skills": ["agent-browser", "mmx-cli"],
+        "mcps": ["*"]
+      },
+      "designer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "openai": {
+      "orchestrator": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "xhigh",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "oracle": {
+        "model": "openai/gpt-5.6-terra",
+        "variant": "high",
+        "skills": ["anti-sycophancy", "grilling"],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "skills": ["agent-browser", "mmx-cli"],
+        "mcps": ["*"]
+      },
+      "explorer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "skills": ["agent-browser", "mmx-cli"],
+        "mcps": ["*"]
+      },
+      "designer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "openai/gpt-5.6-luna",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "poor": {
+      "orchestrator": {
+        "model": "deepseek/deepseek-v4-pro",
+        "variant": "max",
+        "skills": ["*"],
+        "mcps": ["*"]
+      },
+      "oracle": {
+        "model": "deepseek/deepseek-v4-pro",
+        "variant": "max",
+        "skills": ["anti-sycophancy", "grilling"],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["agent-browser", "mmx-cli"],
+        "mcps": ["*"]
+      },
+      "explorer": {
+        "model": "minimax-cn-coding-plan/MiniMax-M3",
+        "variant": "thinking",
+        "skills": ["agent-browser", "mmx-cli"],
+        "mcps": ["*"]
+      },
+      "fixer": {
+        "model": "deepseek/deepseek-v4-flash",
+        "variant": "max",
+        "skills": [],
+        "mcps": []
+      }
+    }
+  },
+  "multiplexer": {
+    "type": "auto"
+  },
+  "companion": {
+    "enabled": false
+  },
+  "backgroundJobs": {
+    "continueOnIdle": false
+  }
+}

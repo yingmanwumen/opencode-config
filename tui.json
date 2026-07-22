@@ -1,5 +1,8 @@
 {
-  "plugin": ["@cortexkit/opencode-magic-context@latest"],
+  "plugin": [
+    "@cortexkit/opencode-magic-context@latest",
+    "oh-my-opencode-slim"
+  ],
   "attention": {
     "enabled": false
   }
