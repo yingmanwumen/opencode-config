@@ -24,8 +24,7 @@
   },
   "plugin": [
     "@mohak34/opencode-notifier@latest",
-    "@cortexkit/opencode-magic-context@latest",
-    "oh-my-opencode-slim"
+    "@cortexkit/opencode-magic-context@latest"
   ],
   "shell": "/bin/zsh",
   "lsp": false,
@@ -33,13 +32,5 @@
   "compaction": {
     "auto": false,
     "prune": false
-  },
-  "agent": {
-    "explore": {
-      "disable": true
-    },
-    "general": {
-      "disable": true
-    }
   }
 }

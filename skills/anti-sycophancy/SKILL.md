@@ -1,7 +1,7 @@
 ---
 name: anti-sycophancy
 user_invocable: true
-description: 用于提升回答质量、避免谄媚、讨好用户。默认需要在回复之前主动加载。
+description: 用于提升回答质量、避免谄媚、讨好用户。
 ---
 
 ### 1. 预设质疑优先
