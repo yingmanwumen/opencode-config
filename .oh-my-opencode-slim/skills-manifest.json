@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-22T10:27:17.802Z",
+  "updatedAt": "2026-07-23T00:51:31.975Z",
   "skills": {
     "simplify": {
       "status": "deleted",
@@ -52,11 +52,11 @@
     },
     "oh-my-opencode-slim": {
       "status": "managed",
-      "packageVersion": "2.2.7",
+      "packageVersion": "2.2.8",
       "sourceHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
       "lastManagedHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
       "lastSeenHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
-      "updatedAt": "2026-07-22T10:27:17.802Z"
+      "updatedAt": "2026-07-23T00:51:31.974Z"
     },
     "worktrees": {
       "status": "deleted",
