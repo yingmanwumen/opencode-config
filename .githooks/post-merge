@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e
-if [ -f configs/magic-context.jsonc ]; then
-	mkdir -p ~/.config/cortexkit
-	cp configs/magic-context.jsonc ~/.config/cortexkit/magic-context.jsonc
-fi
