@@ -23,6 +23,16 @@
     }
   },
   "plugin": [],
+  "agent": {
+    "build": {
+      "model": "opencode/gpt-5.6-luna",
+      "variant": "low"
+    },
+    "plan": {
+      "model": "opencode/gpt-5.6-terra",
+      "variant": "medium"
+    }
+  },
   "shell": "/bin/zsh",
   "lsp": false,
   "formatter": false,
