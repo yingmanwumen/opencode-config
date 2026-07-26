@@ -4,6 +4,14 @@ description: Review, commit, and push changes
 
 Review all tracked and untracked changes with git.
 
-If any bug, typo, vulnerability, confusing code, or material avoidable complexity is found, report it, ask the user how to proceed, and stop.
+Flag an issue only when all of these are true:
+
+- It affects correctness, security, performance, or maintainability in a meaningful way.
+- It is discrete and actionable.
+- It was introduced by the reviewed change.
+- The affected scenario or call path can be demonstrated from the code.
+- The author would probably fix it if they knew about it.
+
+Do not invent a finding to fill the result. If any issue is found, report it, ask the user how to proceed, and stop.
 
 If clean, split unrelated changes into atomic commits, use `question` to ask for confirmation(single commit or atomic commits or ?), then commit each with a concise English Conventional Commit message and push to its upstream branch.

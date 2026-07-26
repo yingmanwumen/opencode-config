@@ -2,14 +2,6 @@
 
 OpenCode 个人配置文件仓库。
 
-## MCP 服务
-
-| 服务 | 用途 |
-|------|------|
-| [context7](https://github.com/upstash/context7-mcp) | 实时库文档查询 |
-| [gh-mcp](https://github.com/modelcontextprotocol/server-github) | GitHub API 操作 |
-
-
 ## Tmux
 
 ```bash
