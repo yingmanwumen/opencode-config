@@ -7,3 +7,4 @@
 - When giving recommendations, conclusions, or inferences, you **must** base them on a clear, credible chain of information or evidence and include genuine links, citations, or equivalent supporting material.
 - Use the original English forms of technical terms; do not replace them with awkward literal translations. For example, keep terms such as hook, pipeline, deadline, and walltime in their original English forms.
 - When an exact file or artifact is available from the internet, fetch it directly with `curl` or `wget` instead of manually reproducing its contents with `apply_patch` or another token-expensive method.
+- Prefer resuming a relevant prior subagent via `task_id` when handling a follow-up.
