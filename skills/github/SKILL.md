@@ -1,5 +1,5 @@
 ---
-description: GitHub workflows using the gh CLI for repositories, issues, pull requests, code review, GitHub Actions, stacked PRs, branching, and repository automation. Use when a task requires inspecting or changing GitHub state.
+description: GitHub workflows using the gh CLI for repositories, issues, pull requests, code review, GitHub Actions, stacked PRs, branching, and repository automation. Use when a task requires inspecting or changing GitHub state. Also use when discovering public repositories, libraries, tools, skills, or examples on GitHub.
 license: MIT
 metadata:
     author: Callstack
