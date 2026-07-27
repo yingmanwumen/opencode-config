@@ -1,8 +1,3 @@
----
-name: quickchart
-description: Generate chart images, QR codes, and barcodes via the QuickChart HTTP API. Use when the user wants to create bar charts, line charts, pie charts, radar charts, scatter plots, QR codes, or any Chart.js-based static image for embedding in email, SMS, chat messages, PDFs, reports, or anywhere client-side JS rendering is unavailable. Also use when the user asks to generate a chart image from data or natural language description.
----
-
 # QuickChart — Chart Image & QR Code API
 
 QuickChart is an HTTP API that generates static images (PNG, SVG, WebP, PDF) of Chart.js charts, QR codes, and barcodes. No client-side rendering required — just an HTTP request.

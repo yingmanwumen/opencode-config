@@ -1,14 +1,3 @@
----
-name: kroki
-description: |
-  Convert plain text diagrams to images via the free Kroki API (https://kroki.io).
-  Supports Mermaid, GraphViz, and more.
-  Use when the user needs to generate flowcharts, sequence diagrams, class diagrams,
-  ER diagrams, network diagrams, architecture diagrams, or any diagram from a textual
-  description. Also use when you have Mermaid/GraphViz/etc source and need
-  a rendered image (PNG/SVG/PDF).
----
-
 # Kroki — Free Diagram Rendering API
 
 Kroki provides a unified HTTP API to convert plain text diagram descriptions into images (PNG, SVG, PDF, etc.). It supports over 25 diagram libraries.
