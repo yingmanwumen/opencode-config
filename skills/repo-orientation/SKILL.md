@@ -10,7 +10,7 @@ Identify the smallest relevant part of the repository before editing.
 
 ## Read
 - `AGENTS.md`
-- project grounding file, usually `.codex/project-context.md`
+- project grounding file, usually `README.md`
 - relevant design docs
 - relevant tests or validation output
 - entrypoint files, manifests, and top-level tree as needed

@@ -1,5 +1,5 @@
 ---
-description: GitHub patterns using gh CLI for pull requests, stacked PRs, code review, branching strategies, and repository automation. Use when working with GitHub PRs, merging strategies, or repository management tasks.
+description: GitHub workflows using the gh CLI for repositories, issues, pull requests, code review, GitHub Actions, stacked PRs, branching, and repository automation. Use when a task requires inspecting or changing GitHub state.
 license: MIT
 metadata:
     author: Callstack
@@ -10,11 +10,26 @@ metadata:
     tags: github, gh-cli, pull-request, stacked-pr, squash, rebase
 name: github
 ---
-# GitHub Patterns
+# GitHub Workflows
 
 ## Tools
 
-Use `gh` CLI for all GitHub operations. Prefer CLI over GitHub MCP servers for lower context usage.
+Use only the local `gh` CLI for GitHub operations and ordinary `git` commands for local repository state.
+
+Before mutating remote state, inspect the repository, current branch, working tree, authentication, and relevant PR status. Ask before making an operation with material or irreversible impact when the user's request does not clearly authorize it.
+
+For repository and issue triage, use `gh repo view`, `gh pr view/list`, and `gh issue view/list`. Resolve the repository from the current Git remote or an explicit user-provided owner/repo; do not guess an ambiguous target.
+
+## Workflow routing
+
+Read only the reference needed for the task:
+
+| Task | Reference |
+| --- | --- |
+| Create, inspect, or publish a PR | [publish-pull-request.md](references/publish-pull-request.md) |
+| Address review comments | [address-review-comments.md](references/address-review-comments.md) |
+| Diagnose or fix failed GitHub Actions | [fix-github-actions.md](references/fix-github-actions.md) |
+| Merge a stacked PR chain | [stacked-pr-workflow.md](references/stacked-pr-workflow.md) |
 
 ## Quick Commands
 
@@ -30,34 +45,17 @@ gh pr status
 gh pr checks <PR_NUMBER>
 ```
 
-## Stacked PR Workflow Summary
-
-When merging a chain of stacked PRs (each targeting the previous branch):
-
-1. **Merge the first PR** into main via squash merge
-2. **For each subsequent PR**: rebase onto main, update base to main, then squash merge
-3. **On conflicts**: stop and ask the user to resolve manually
-
-```bash
-# Rebase next PR's branch onto main, excluding already-merged commits
-git rebase --onto origin/main <old-base-branch> <next-branch>
-git push --force-with-lease origin <next-branch>
-gh pr edit <N> --base main
-gh pr merge <N> --squash --title "<PR title> (#N)"
-```
-
-See [stacked-pr-workflow.md][stacked-pr-workflow] for full step-by-step details.
-
 ## Quick Reference
 
 | File | Description |
 | --- | --- |
-| [stacked-pr-workflow.md][stacked-pr-workflow] | Merge stacked PRs into main as individual squash commits |
+| [publish-pull-request.md](references/publish-pull-request.md) | Inspect, commit, push, and create/update a PR |
+| [address-review-comments.md](references/address-review-comments.md) | Inspect and address actionable review feedback |
+| [fix-github-actions.md](references/fix-github-actions.md) | Inspect failed checks and implement approved fixes |
+| [stacked-pr-workflow.md](references/stacked-pr-workflow.md) | Merge stacked PRs into main as individual squash commits |
 
 ## Problem -> Skill Mapping
 
 | Problem | Start With |
 | --- | --- |
-| Merge stacked PRs cleanly | [stacked-pr-workflow.md][stacked-pr-workflow] |
-
-[stacked-pr-workflow]: references/stacked-pr-workflow.md
+| Merge stacked PRs cleanly | [stacked-pr-workflow.md](references/stacked-pr-workflow.md) |
