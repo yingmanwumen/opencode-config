@@ -1,6 +1,6 @@
 ---
 name: repo-orientation
-description: Map the repository structure, runtime entrypoints, contracts, and validation path before making changes.
+description: Maps a repository's structure, runtime entrypoints, contracts, and validation path. Use when starting work that requires understanding an existing repository before making changes.
 ---
 
 # Repo Orientation
