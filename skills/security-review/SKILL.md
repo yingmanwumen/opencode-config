@@ -1,13 +1,29 @@
 ---
 name: security-review
-description: 'AI-powered codebase security scanner that reasons about code like a security researcher — tracing data flows, understanding component interactions, and catching vulnerabilities that pattern-matching tools miss. Use this skill when asked to scan code for security vulnerabilities, find bugs, check for SQL injection, XSS, command injection, exposed API keys, hardcoded secrets, insecure dependencies, access control issues, or any request like "is my code secure?", "review for security issues", "audit this codebase", or "check for vulnerabilities". Covers injection flaws, authentication and access control bugs, secrets exposure, weak cryptography, insecure dependencies, and business logic issues across JavaScript, TypeScript, Python, Java, PHP, Go, Ruby, and Rust.'
+description: 'Perform an evidence-based security review of a repository or selected files. Use when asked to audit code, find vulnerabilities, inspect SQL injection, XSS, command injection, exposed secrets, dependency risks, authentication or access-control flaws, weak cryptography, or business-logic security issues. Combines repository inspection, available ecosystem audit tools, and cross-file reasoning; never presents unverified guesses as confirmed vulnerabilities.'
 ---
 
 # Security Review
 
-An AI-powered security scanner that reasons about your codebase the way a human security
-researcher would — tracing data flows, understanding component interactions, and catching
-vulnerabilities that pattern-matching tools miss.
+Perform a static, evidence-based review. Trace data flows and component interactions when
+the repository provides enough context, but do not claim that this workflow replaces a
+DAST, penetration test, dependency database, or runtime security monitoring.
+
+## Evidence and Tool Boundaries
+
+- Separate confirmed findings, likely findings, and review notes. A suspicious pattern is
+  not a vulnerability until the relevant source, sink, trust boundary, and mitigation have
+  been checked.
+- Use repository-native audit commands when available (`npm audit`, `pnpm audit`,
+  `pip-audit`, `bundle audit`, `cargo audit`, `govulncheck`, or the ecosystem equivalent).
+  Do not invent CVE IDs, affected ranges, or remediation versions.
+- If an audit tool, network, lockfile, or credential is unavailable, report the audit as
+  `not run` or `incomplete` and state the exact reason. The package watchlist is only a
+  heuristic for manual review, not proof of a current vulnerability.
+- Do not print, reproduce, or include complete secrets. Redact values, for example as
+  `sk_live_...abcd`, and report only the file, line, type, and remediation.
+- Do not modify files, rotate credentials, rewrite git history, install packages, or run
+  destructive commands unless the user explicitly requests and authorizes that action.
 
 ## When to Use This Skill
 
@@ -24,15 +40,17 @@ Use this skill when the request involves:
 - Any request phrasing like "is my code secure?", "scan this file", or "check my repo for vulnerabilities"
 - Running `/security-review` or `/security-review <path>`
 
-## How This Skill Works
+## Review Method
 
-Unlike traditional static analysis tools that match patterns, this skill:
-1. **Reads code like a security researcher** — understanding context, intent, and data flow
-2. **Traces across files** — following how user input moves through your application
-3. **Self-verifies findings** — re-examines each result to filter false positives
-4. **Assigns severity ratings** — CRITICAL / HIGH / MEDIUM / LOW / INFO
-5. **Proposes targeted patches** — every finding includes a concrete fix
-6. **Requires human approval** — nothing is auto-applied; you always review first
+1. Establish scope, languages, frameworks, entrypoints, and available lockfiles.
+2. Run only safe, read-only dependency and secret checks available in the environment;
+   record command status and limitations.
+3. Inspect source and configuration for vulnerability classes relevant to the stack.
+4. Trace high-risk inputs to sinks across files where the call path is available.
+5. Re-check each candidate against validation, encoding, authorization, middleware, and
+   deployment configuration before assigning a severity.
+6. Report findings with confidence and evidence. Include proposed patches only as review
+   material; nothing is auto-applied.
 
 ## Execution Workflow
 
@@ -54,17 +72,23 @@ Before scanning source code, audit dependencies first (fast wins):
 - **Ruby**: Check `Gemfile.lock`
 - **Rust**: Check `Cargo.toml`
 - **Go**: Check `go.sum`
-- Flag packages with known CVEs, deprecated crypto libs, or suspiciously old pinned versions
-- Read `references/vulnerable-packages.md` for a curated watchlist
+- Report vulnerabilities only when confirmed by the audit tool or a cited authoritative
+  advisory. Treat deprecated or suspiciously old packages as review notes unless evidence
+  supports a vulnerability.
+- Use `references/vulnerable-packages.md` only as a secondary heuristic after an
+  authoritative audit command. Its version ranges may be stale.
 
 ### Step 3 — Secrets & Exposure Scan
-Scan ALL files (including config, env, CI/CD, Dockerfiles, IaC) for:
+Scan relevant project files (including untracked config, CI/CD, Dockerfiles, and IaC) for
+the following. Exclude dependency directories, build artifacts, and other generated files
+unless they are explicitly in scope:
 - Hardcoded API keys, tokens, passwords, private keys
 - `.env` files accidentally committed
 - Secrets in comments or debug logs
 - Cloud credentials (AWS, GCP, Azure, Stripe, Twilio, etc.)
 - Database connection strings with credentials embedded
-- Read `references/secret-patterns.md` for regex patterns and entropy heuristics to apply
+- Read `references/secret-patterns.md` for patterns and false-positive guidance. Never
+  expose a detected value in the report.
 
 ### Step 4 — Vulnerability Deep Scan
 This is the core scan. Reason about the code — don't just pattern-match.
@@ -128,7 +152,8 @@ For every CRITICAL and HIGH finding, generate a concrete patch:
 - Show the fixed code (after)
 - Explain what changed and why
 - Preserve the original code style, variable names, and structure
-- Add a comment explaining the fix inline
+- Add a comment explaining the fix inline only when it matches the existing code style;
+  do not require comments in otherwise self-explanatory code.
 
 Explicitly state: **"Review each patch before applying. Nothing has been changed yet."**
 
@@ -148,9 +173,12 @@ Explicitly state: **"Review each patch before applying. Nothing has been changed
 - **Never** auto-apply any patch — present patches for human review only
 - **Always** include a confidence rating per finding (High / Medium / Low)
 - **Group findings** by category, not by file
-- **Be specific** — include file path, line number, and the exact vulnerable code snippet
+- **Be specific** — include file path, line number, and a minimal safe snippet. Redact
+  secrets, tokens, credentials, and sensitive personal data in every excerpt.
 - **Explain the risk** in plain English — what could an attacker do with this?
-- If the codebase is clean, say so clearly: "No vulnerabilities found" with what was scanned
+- If no confirmed vulnerability is found, say: "No confirmed vulnerabilities found" and
+  list the scope, tools run, and residual limitations. Do not equate an incomplete audit
+  with a clean codebase.
 
 ## Reference Files
 
