@@ -3,7 +3,10 @@
   "snapshot": false,
   "instructions": ["~/.config/opencode/SOUL.md"],
   "mcp": {},
-  "plugin": ["@ramtinj95/opencode-tokenscope@latest"],
+  "plugin": [
+    "@ramtinj95/opencode-tokenscope@latest",
+    "@floschl/opencode-tmux"
+  ],
   "shell": "/bin/zsh",
   "lsp": false,
   "formatter": false,
