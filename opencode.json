@@ -5,10 +5,16 @@
   "mcp": {},
   "plugin": [
     "@ramtinj95/opencode-tokenscope@latest",
-    "@floschl/opencode-tmux"
+    "@floschl/opencode-tmux",
+    "opencode-gpt-imagegen"
   ],
   "shell": "/bin/zsh",
   "lsp": false,
   "formatter": false,
-  "permission": "allow"
+  "permission": {
+    "*": "allow",
+    "read": "deny",
+    "glob": "deny",
+    "grep": "deny"
+  }
 }
