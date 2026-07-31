@@ -14,3 +14,4 @@
 - Prefer resuming a relevant prior subagent via `task_id` when handling a follow-up.
 - For filesystem search and text reading, prioritize `rg`, `fd`, and `sed` under `bash` tool.
 - When an exact file or artifact is available from the internet, fetch it directly with `curl` or `wget` instead of manually reproducing its contents with `apply_patch` or another token-expensive method.
+- When reviewing, investigate the likely root cause of any potential issue and trace how the error propagates to the reported symptom. An issue that cannot be clearly and convincingly demonstrated is not an issue and should be ignored.
