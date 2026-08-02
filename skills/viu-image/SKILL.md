@@ -3,7 +3,7 @@ name: viu-image
 description: Display or preview image files in a separate terminal window with viu. Use when the user asks to show an image in a terminal.
 ---
 
-Use commandline tool `viu` to show images in terminal simulator.
+Use command-line tool `viu` to show images in terminal simulator.
 
 1. Check that `viu` is available.
 2. If unavailable, state this and offer `cargo install viu`. If Cargo is unavailable, offer the platform's package-manager command instead. Do not install without request.

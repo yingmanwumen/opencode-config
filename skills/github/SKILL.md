@@ -5,6 +5,6 @@ description: Use the gh CLI to interact with GitHub repositories, agent skills, 
 
 # GitHub
 
-Use commandline tool `gh` for GitHub interactions.
+Use command-line tool `gh` for GitHub interactions.
 
 If `gh` is unavailable, tell the user and ask whether they want it installed. Do not install it without the user's approval.
