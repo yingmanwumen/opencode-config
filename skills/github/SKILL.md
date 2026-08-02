@@ -1,6 +1,6 @@
 ---
 name: github
-description: Use the gh CLI to interact with GitHub repositories, agent skills, issues, pull requests, Actions, releases, and code search.
+description: Way to process/search with all github related things including repositories, agent skills, issues, pull requests, github actions, releases, and code search.
 ---
 
 # GitHub
