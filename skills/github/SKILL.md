@@ -1,6 +1,6 @@
 ---
 name: github
-description: Way to process/search with all github related things including repositories, agent skills, issues, pull requests, github actions, releases, and code search.
+description: Load this skill to use `gh` when Github related operations are needed, including code/repo search, issues/PR, Github actions, etc.. `gh` can also be used for searching agent skills.
 ---
 
 # GitHub
