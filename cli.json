@@ -1,4 +1,8 @@
 {
+  "keybinds": {
+    "agent_cycle": "tab",
+    "agent_cycle_reverse": "shift+tab"
+  },
   "theme": {
     "name": "claude"
   },
