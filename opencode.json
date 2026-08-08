@@ -6,7 +6,8 @@
   "plugin": [
     "@ramtinj95/opencode-tokenscope@latest",
     "@floschl/opencode-tmux",
-    "opencode-gpt-imagegen"
+    "opencode-gpt-imagegen",
+    "opencode-pty"
   ],
   "shell": "/bin/zsh",
   "lsp": false,
