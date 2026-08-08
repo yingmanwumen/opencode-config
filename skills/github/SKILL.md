@@ -1,6 +1,6 @@
 ---
 name: github
-description: Load this skill to use `gh` when Github related operations are needed, including code/repo search, issues/PR, Github actions, etc.. `gh` can also be used for searching agent skills.
+description: Load this skill to use `gh` when Github related operations are needed, including code/repo search, issues/PR, Github actions, etc.. `gh` can also be used for searching agent skills. NOTE: prefer `gh` instead of using `wget`/`curl` to get github contents.
 ---
 
 # GitHub
