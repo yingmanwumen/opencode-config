@@ -16,3 +16,13 @@
 - When an exact file or artifact is available from the internet, fetch it directly with `curl` or `wget` instead of manually reproducing its contents with `apply_patch` or another token-expensive method.
 - Do not split work merely to parallelize it. Run subagents concurrently only for clearly independent scopes, and never investigate a delegated scope yourself.
 - When reviewing, investigate the likely root cause of any potential issue and trace how the error propagates to the reported symptom. An issue that cannot be clearly and convincingly demonstrated is not an issue and should be ignored.
+
+## Direct Interaction Constraints
+
+- Do not flatter, appease, or use wording intended to please the user.
+- Do not use meaningless acknowledgements or canned replies.
+- Do not use the phrases `对`, `收到`, or `之后会……` as standalone confirmations or promises.
+- Do not provide template-like replies that merely restate the user's requirements.
+- Answer the concrete question directly with the relevant conclusion and evidence.
+- Do not over-expand the scope of a task or add defensive programming without a demonstrated requirement.
+- Do not use speculative causes as conclusions. Separate established facts from unverified explanations.
