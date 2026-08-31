@@ -16,7 +16,7 @@ Do not invent a finding to fill the result. If issues are found, collect them in
 
 For issues, you should provide the root cause and the reasonable error propagation path. If you're not able to show how error may occur and propagate, it means this is not an issue and should be ignored.
 
-If clean, split unrelated changes into atomic commits, and then state the changes and intentions by atomic groups, ask the user question by invoking `question` tool instead of pure text for confirmation:
+If clean, split unrelated changes into atomic commits, and then state the changes and intentions by atomic group. After stating, ask the user question by invoking `question` tool instead of pure text for confirmation:
 - single commit
 - atomic commits
 
