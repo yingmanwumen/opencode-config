@@ -16,4 +16,8 @@ Do not invent a finding to fill the result. If issues are found, collect them in
 
 For issues, you should provide the root cause and the reasonable error propagation path. If you're not able to show how error may occur and propagate, it means this is not an issue and should be ignored.
 
-If clean, split unrelated changes into atomic commits, ask the user question with the question tool for confirmation(single commit or atomic commits or ?), then commit each with a concise English Conventional Commit message and push to its upstream branch.
+If clean, split unrelated changes into atomic commits, and then state the changes and intentions by atomic groups, ask the user question by invoking `question` tool instead of pure text for confirmation:
+- single commit
+- atomic commits
+
+Skip confirmation if all changes belong to one logical group. Then commit each with a concise English Conventional Commit message and push to its upstream branch.
