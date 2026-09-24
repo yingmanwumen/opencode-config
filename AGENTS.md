@@ -11,6 +11,6 @@
 
 ## Tools & Tasks
 
-- Only launch multiple agents when the user explicitly requests it.
+- Only launch multiple agents/subagents when the user **explicitly** requests it.
 - For filesystem search and text reading, prioritize `rg`, `fd`, and `sed` under `bash` tool.
 - When reviewing, investigate the likely root cause of any potential issue and trace how the error propagates to the reported symptom. An issue that cannot be clearly and convincingly demonstrated is not an issue and should be ignored. When giving bugs/issues, you should either provide root causes or provide available solutions. If you are not able to provide suitable solutions, you should consider that if it is a realworld bug/issue.
