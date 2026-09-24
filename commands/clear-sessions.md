@@ -1,9 +1,9 @@
 ---
-description: Delete inactive historical sessions for the current project
+description: Delete all OpenCode sessions
 ---
 
-Delete inactive historical OpenCode sessions for the current location:
+Delete every OpenCode session.
 
-1. List sessions with `opencode api GET /api/session --param directory="$PWD"`. For each page, pass its `cursor.next` value as `--param cursor="..."` to fetch the next page, and stop when `cursor.next` is absent. Track cursors already requested; if a cursor repeats or a page makes no progress, stop and report the pagination error instead of looping. Also call `opencode api GET /api/session/active`.
-2. Identify inactive root sessions (no `parentID`), excluding roots in the current command's session tree or with active descendants. Report the location and count. If count is zero, stop.
-3. Ask for confirmation with **Delete** and **Cancel** choices. On **Delete**, issue all `opencode api DELETE /api/session/{sessionID}` requests together, in parallel, for the eligible root IDs. Report the number deleted and any failed IDs.
+1. List all sessions with `opencode api GET /api/session --param limit=1000`. Do not pass a `directory` parameter. Parse the response JSON and collect every session ID from `data`. If `cursor.next` is present, request the next page with `opencode api GET /api/session --param limit=1000 --param "cursor=$NEXT_CURSOR"`, using the exact cursor value returned by the API. Continue until there is no next cursor.
+2. Delete every collected session by calling `opencode api DELETE /api/session/{sessionID}` for each ID. Delete sessions in parallel. Do not filter by location, parent, activity, or whether a session is the current session. Do not ask for confirmation.
+3. Report the total number of sessions deleted and any IDs whose deletion failed.
