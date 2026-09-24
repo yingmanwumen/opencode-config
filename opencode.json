@@ -1,21 +1,18 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "snapshot": false,
-  "instructions": [],
+  "snapshots": false,
   "mcp": {},
-  "plugin": [
-    "@ramtinj95/opencode-tokenscope@latest",
-    "@floschl/opencode-tmux",
-    "opencode-gpt-imagegen",
-    "opencode-pty"
-  ],
+  "plugins": [{ "package": "opencode-pty/v2" }],
   "shell": "/bin/zsh",
   "lsp": false,
   "formatter": false,
-  "permission": {
-    "*": "allow",
-    "read": "deny",
-    "glob": "deny",
-    "grep": "deny"
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "*", "effect": "deny" },
+    { "action": "glob", "resource": "*", "effect": "deny" },
+    { "action": "grep", "resource": "*", "effect": "deny" }
+  ],
+  "websearch": {
+    "provider": "random"
   }
 }

@@ -1,16 +1,25 @@
 {
+  "$schema": "https://opencode.ai/v2/cli.json",
   "keybinds": {
-    "agent_cycle": "tab",
-    "agent_cycle_reverse": "shift+tab"
+    "agent.cycle": "tab",
+    "agent.cycle.reverse": "shift+tab"
   },
   "theme": {
-    "name": "claude"
+    "name": "claude",
+    "mode": "system"
   },
+  "cursor": {
+    "style": "block",
+    "blinking": false
+  },
+  "mouse": true,
   "scroll": {
     "acceleration": true
   },
+  "prompt": {
+    "image_preview": true
+  },
   "attention": {
-    "enabled": true,
     "notifications": true,
     "sound": true
   },
@@ -20,7 +29,12 @@
   "session": {
     "sidebar": "hide",
     "scrollbar": false,
-    "thinking": "hide"
+    "thinking": "hide",
+    "image_preview": true,
+    "permissions": "autoaccept"
   },
-  "animations": true
+  "animations": true,
+  "tabs": {
+    "enabled": false
+  }
 }
