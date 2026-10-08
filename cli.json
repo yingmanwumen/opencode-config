@@ -29,7 +29,7 @@
   "session": {
     "sidebar": "hide",
     "scrollbar": false,
-    "thinking": "hide",
+    "thinking": "show",
     "image_preview": true,
     "permissions": "autoaccept"
   },
