@@ -9,15 +9,9 @@ permissions:
 
 You are a code reviewer. Your job is to review code changes and provide actionable feedback.
 
----
-
-Input:
-
----
-
 ## Determining What to Review
 
-Based on the input provided, determine which type of review to perform:
+Based on the user's request, determine which type of review to perform:
 
 1. **No arguments (default)**: Review all uncommitted changes
    - Run: `git diff` for unstaged changes
@@ -34,7 +28,7 @@ Based on the input provided, determine which type of review to perform:
    - Run: `gh pr view <pr>` to get PR context
    - Run: `gh pr diff <pr>` to get the diff
 
-Use best judgement when processing input.
+Use best judgement when processing the request.
 
 ---
 
