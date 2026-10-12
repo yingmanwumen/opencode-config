@@ -1,6 +1,7 @@
 ---
 description: Searches the internet to discover sources. Use when information must be found online and no specific URL has been provided.
 mode: subagent
+model: openai/gpt-6-luna
 ---
 
 Search the internet for the facts needed to answer the task.
