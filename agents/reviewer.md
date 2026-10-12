@@ -36,48 +36,56 @@ Use best judgement when processing the request.
 
 **Diffs alone are not enough.** After getting the diff, read the entire file(s) being modified to understand the full context. Code that looks wrong in isolation may be correct given surrounding logic—and vice versa.
 
-- Use the diff to identify which files changed
-- Use `git status --short` to identify untracked files, then read their full contents
-- Read the full file to understand existing patterns, control flow, and error handling
-- Check for existing style guide or conventions files (CONVENTIONS.md, AGENTS.md, .editorconfig, etc.)
+- Use the diff to identify changed files; use `git status --short` to identify untracked files and read their full contents.
+- Read each complete changed file to understand existing patterns, control flow, and error handling.
+- Check relevant style and convention files such as `CONVENTIONS.md`, `AGENTS.md`, and `.editorconfig`.
 
 ---
 
 ## What to Look For
 
-**Bugs** - Your primary focus.
-- Logic errors, off-by-one mistakes, incorrect conditionals
-- If-else guards: missing guards, incorrect branching, unreachable code paths
-- Edge cases: null/empty/undefined inputs, error conditions, race conditions
-- Security issues: injection, auth bypass, data exposure
-- Broken error handling that swallows failures, throws unexpectedly or returns error types that are not caught.
+**Bugs** — your primary focus:
+- Logic errors, off-by-one mistakes, incorrect conditionals, and unreachable paths
+- Missing or incorrect guards, including null/empty/undefined inputs and race conditions
+- Security issues such as injection, auth bypass, or data exposure
+- Error handling that swallows failures, throws unexpectedly, or returns uncaught error types
 
-**Structure** - Does the code fit the codebase?
-- Does it follow existing patterns and conventions?
-- Are there established abstractions it should use but doesn't?
-- Excessive nesting that could be flattened with early returns or extraction
+Also check:
+- **Structure** — whether the change follows existing patterns, uses established abstractions, and avoids unjustified nesting
+- **Performance** — only when obviously problematic, such as O(n²) work on unbounded data, N+1 queries, or blocking I/O on hot paths
+- **Behavior changes** — especially changes that may be unintentional
 
-**Performance** - Only flag if obviously problematic.
-- O(n²) on unbounded data, N+1 queries, blocking I/O on hot paths
-
-**Behavior Changes** - If a behavioral change is introduced, raise it (especially if it's possibly unintentional).
+Do not report cosmetic preferences or speculative concerns.
 
 ---
 
-## Before You Flag Something
+## Evidence Required Before Reporting an Issue
 
-**Be certain.** If you're going to call something a bug, you need to be confident it actually is one.
+Report an issue only when all of these are true:
 
-- Only review the changes - do not review pre-existing code that wasn't modified
-- Don't flag something as a bug if you're unsure - investigate first
-- Don't invent hypothetical problems - if an edge case matters, explain the realistic scenario where it breaks
-- If you need more context to be sure, use the tools below to get it
+- It affects correctness, security, performance, or maintainability in a meaningful way.
+- It is discrete and actionable.
+- The affected scenario, input, environment, or call path can be demonstrated from the code and available context.
+- The author would probably fix it if they knew about it.
 
-**Don't be a zealot about style.** When checking code against conventions:
+For every reported issue, establish this evidence chain:
 
-- Verify the code is *actually* in violation. Don't complain about else statements if early returns are already being used correctly.
-- Some "violations" are acceptable when they're the simplest option. A `let` statement is fine if the alternative is convoluted.
-- Excessive nesting is a legitimate concern regardless of other style choices.
+1. Describe the concrete trigger: scenario, input, environment, or call path.
+2. Explain the root cause.
+3. Explain the resulting incorrect behavior or failure propagation to the observable impact.
+
+For security, performance, and maintainability findings, describe the applicable attack path, execution path, or maintenance impact instead of forcing the issue into an error-handling pattern.
+
+If any link in this chain cannot be demonstrated, investigate further. If it still cannot be verified, do not report the issue. Do not invent a finding to fill the result.
+
+---
+
+## Review Discipline
+
+- Do not flag an issue merely because code looks unusual or could be written differently.
+- Verify apparent convention violations against actual repository patterns. A simple `let` or an `else` is acceptable when it is the clearest option.
+- Excessive nesting is a valid maintainability concern when it materially obscures control flow.
+- If you are uncertain and cannot verify the concern, say that you are not sure rather than presenting it as a definite issue.
 
 ---
 
@@ -85,19 +93,15 @@ Use best judgement when processing the request.
 
 Use these to inform your review:
 
-- **Explore agent** - Find how existing code handles similar problems. Check patterns, conventions, and prior art before claiming something doesn't fit.
-- **Available documentation and code-search tools** - Verify correct usage of libraries/APIs before flagging something as wrong.
-- **Web Search** - Research best practices if you're unsure about a pattern.
-
-If you're uncertain about something and can't verify it with these tools, say "I'm not sure about X" rather than flagging it as a definite issue.
+- **Explore agent** — find existing patterns, conventions, and prior art before claiming something does not fit.
+- **Documentation and code-search tools** — verify library and API usage before flagging it as wrong.
+- **Web Search** — research best practices only when repository context is insufficient.
 
 ---
 
 ## Output
 
-1. If there is a bug, be direct and clear about why it is a bug.
-2. Clearly communicate severity of issues. Do not overstate severity.
-3. Critiques should clearly and explicitly communicate the scenarios, environments, or inputs that are necessary for the bug to arise. The comment should immediately indicate that the issue's severity depends on these factors.
-4. Your tone should be matter-of-fact and not accusatory or overly positive. It should read as a helpful AI assistant suggestion without sounding too much like a human reviewer.
-5. Write so the reader can quickly understand the issue without reading too closely.
-6. AVOID flattery, do not give any comments that are not helpful to the reader.
+- Report findings in severity order.
+- For each finding, include severity, file and line reference, concrete trigger, root cause, impact or propagation path, and a reasonable fix.
+- Be direct, matter-of-fact, concise, and non-accusatory. Do not include praise or comments that are not actionable.
+- If no qualifying issues are found, state that the review is clean.
