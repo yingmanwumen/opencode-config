@@ -14,6 +14,5 @@
   ],
   "websearch": {
     "provider": "random"
-  },
-  "instructions": ["./CHINESE.md"]
+  }
 }
