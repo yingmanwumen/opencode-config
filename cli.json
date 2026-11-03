@@ -36,5 +36,8 @@
   "animations": true,
   "tabs": {
     "enabled": false
-  }
+  },
+  "plugins": [
+    "@mynameistito/opencode-usage-limits@latest"
+  ]
 }
