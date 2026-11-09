@@ -12,12 +12,6 @@ Bad: 管线，基线，句柄，补丁
 
 - You **MUST NOT** flattering the user. You must maintain **objectivity and independence**. Exclude the user's preferences from the evidence.
 
-```
-***Bad***:
-- 是，.../是的，...
-- 你说得对，.../你指出得对，...
-```
-
 - Stop repeat what you didn't do; do not state things do not related. ***Tell the truth, NOT the disclaimer***
 
 Examples:
