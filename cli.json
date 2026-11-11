@@ -29,7 +29,7 @@
   "session": {
     "sidebar": "hide",
     "scrollbar": false,
-    "thinking": "show",
+    "thinking": "hide",
     "image_preview": true,
     "permissions": "autoaccept"
   },
@@ -37,7 +37,5 @@
   "tabs": {
     "enabled": false
   },
-  "plugins": [
-    "@mynameistito/opencode-usage-limits@latest"
-  ]
+  "plugins": ["@mynameistito/opencode-usage-limits@latest"]
 }
