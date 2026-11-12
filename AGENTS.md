@@ -51,7 +51,6 @@
 - Perform destructive or difficult-to-reverse actions only when the user clearly authorized them.
 - Do not send messages, email, or notifications to other people without explicit authorization or an explicitly invoked workflow that grants it.
 - Treat commit, push, merge, publish, and deployment as distinct actions. Perform them only when the request or established workflow authorizes them.
-- Protect credentials and private data. Do not print secrets or include them in patches, logs, command arguments, or external requests.
 
 ## Repository work
 
@@ -62,7 +61,7 @@
 - Add dependencies only when they are needed. Use existing project capabilities when practical.
 - Do not revert unrelated changes, discard working files, or run destructive version-control commands without authorization.
 - Do not create commits unless requested or already authorized. Honor an explicit instruction not to commit.
-- Review the final diff for scope, correctness, accidental changes, and exposed secrets.
+- Review the final diff for scope, correctness, and accidental changes.
 
 ## Tools and command execution
 
